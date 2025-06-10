@@ -1,0 +1,215 @@
+body {
+    background: linear-gradient(180deg, #555B6E, #a6ebdc56);
+    text-align: center;
+    background-color: #555B6E;
+    background-repeat: no-repeat;
+}
+
+
+html {
+    height: auto;
+    min-height: 100%;
+}
+
+h1 {
+    font-family: Courier;
+    font-weight: bold;
+    letter-spacing: 5px;
+    background-color: #FAF9F9;
+    width: fit-content;
+    border-radius: 40px;
+    margin: auto;
+    padding: 20px;
+    font-size: 50px;
+    color: #a6ebdc;
+    text-shadow: 2px 2px 0 #769e9c;
+    border: 5px #89B0AE double;
+}
+
+
+#select-container div {
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 45px;
+    background-color: #FAF9F9;
+    color: #555B6E;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 10px;
+    border: 5px solid #89B0AE;
+    transition: transform 0.5s linear, background-color 0.5s linear;
+    
+}
+
+#select-container div:hover {
+    transform: scale(120%);
+    background-color: #cbf1e8;
+}
+
+#select-container, #current-select-display, #score-display, #tie-breaker-display {
+    font-size: 40px;
+    margin: 25px auto;
+    padding: 15px;
+    font-family: 'Nanum Brush Script', cursive;
+    color: #cbf1e8;
+    border: 2px dotted white;
+    width: fit-content;
+    border-radius: 25px;
+}
+
+#current-select-display {
+    font-size: 45px;
+}
+
+#tie-breaker-directions {
+    font-size: 20px;
+    font-family: Courier;
+}
+
+#tie-breaker-display {
+    width: 50vw;
+}
+
+#user-guess-input div {
+    display: block;
+    margin: auto;
+}
+
+input {
+    background-color: #555B6E;
+    margin: 10px;
+    font-size: 30px;
+    width: 35px;
+    font-family: Courier;
+    font-weight: bold;
+    color:#FFD6BA;
+    border: 1px solid #FFD6BA;
+    
+}
+
+#submit-button {
+    width: fit-content;
+    font-size: 25px;
+    margin: 5px auto;
+    border: 1px solid #FFD6BA;
+    box-shadow: 0 4px 0 #FFD6BA;
+    transition: background-color 0.3s linear;
+}
+
+#submit-button:hover {
+    background-color: #424552;
+}
+
+#submit-button:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #FFD6BA;
+}
+
+#begin-tiebreaker-button {
+    margin: 5px auto;
+}
+
+#ready-prompt {
+    margin: 10px;
+}
+
+h3 {
+    margin: 10px;
+}
+
+#score-display h3 {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-style: double;
+    text-decoration-color: #769e9c;
+}
+
+#score-display {
+    padding: 35px;
+    font-size: 65px;
+    margin: auto;
+    text-align: center;
+}
+
+#left-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    height: 30vw;
+    margin: auto;
+    padding: 35px;
+}
+
+h2 {
+    margin: 0;
+    background-color: #424552;
+    color: #a6ebdc;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 30px;
+    font-family: Courier;
+    border-bottom: 2px dotted white;
+}
+
+/* Main Board */
+.rows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vw;
+}
+
+.square {
+    height: 10vw;
+    width: 10vw;
+    border: 2px solid #FFD6BA;
+    font-size: 10vw;
+    transition: background-color 0.5s linear;
+    color:#555B6E;
+}
+
+.square:hover {
+    background-color: #dcdcdc;
+}
+
+#main-container {
+    width: 30vw;
+    height: 30vw;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FAF9F9;
+    border: 15px ridge #FFD6BA;
+    font-family: 'Nanum Brush Script', cursive;
+
+}
+
+button {
+    background-color: #FAF9F9;
+    color:#555B6E;
+    font-size: 25px;
+    font-family: Courier;
+    margin: 20px auto;
+    padding: 10px;
+    border:#89B0AE 2px solid;
+    box-shadow: 0 6px #89B0AE;
+    transition: background-color 0.5s linear;
+    
+}
+
+button:hover {
+    background-color: #dcdcdc;
+}
+
+button:active {
+    box-shadow: 0 2px #89B0AE;
+    transform: translateY(4px);
+}
+
+#reset-button {
+    display: block;
+}

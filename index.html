@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    
+    <head>
+        <title> Tic Tac Toe | Saakshi Phatak </title>
+        
+        <!-- Link CSS -->
+        <link rel="stylesheet" href="style.css">
+        
+        <!-- Link Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+        
+    </head>
+
+    <body>
+        
+        <!-- Main Title -->
+        <h1> Tic Tac Toe </h1>
+        
+        <!-- Display Current Selected Mark -->
+        <div id = "current-select-display"> Current Mark: </div>
+        
+        <!-- User Select -->
+        <div id = "select-container">
+            <h3> Select your mark! </h3>
+            <div onclick = "selectMark('X')" id = "x-select"> X </div>
+            <div onclick = "selectMark('O')" id = "o-select"> O </div>
+        </div>
+        
+        <!-- Tie Breaker -->
+        <div id = "tie-breaker-display">
+            <h3> Tiebreaker Round! </h3>
+            <div id = "tie-breaker-directions"> The computer will generate a random integer between 1-10, inclusive. Whoever guesses the closest to the chosen number will win this round! </div>
+            <div id = "ready-prompt"> Are you ready? </div>
+            
+            <!-- Begin Tiebreaker Button -->
+            <button onclick = "beginTiebreaker()" id = "begin-tiebreaker-button"> Begin </button>
+            
+            <!-- User Input -->
+            <div id = "user-guess-input">
+                
+                <div>
+                    <label for="x-guess"> X Guess: </label>
+                    <input id = "x-guess" autocomplete="off">
+                </div>
+                
+                <div>
+                    <label for="o-guess"> O Guess: </label>
+                    <input id = "o-guess" autocomplete="off">
+                </div>
+                
+                
+                <input type = "submit" id = "submit-button" onclick = "submitGuess()">
+                <div id = "random-guess-display"></div>
+                
+            </div>
+        </div>
+    
+        <!-- Reset Button -->
+        <button id = "reset-button" onclick = "resetGame()"> New Game </button>
+            
+
+        <!-- Main Container For Layout -->
+        <div id = "layout-container">
+            
+            <!-- Display Score / Leaderboard -->
+            <div id = "left-div">
+                <div id = "score-display">
+                    <h3> Leaderboard </h3>
+                    <div id = "x-score-display"></div>
+                    <div id = "o-score-display"></div>
+                </div>
+            </div>
+            
+            
+            <!-- Main Container -->
+            <div id = "main-container">
+                
+                <!-- Arranged by Rows -->
+                <div class = "rows">
+                    
+                    <!-- Individual Squares -->
+                    <div class = "square" onclick = "placeMark(0)"></div>
+                    <div class = "square" onclick = "placeMark(1)"></div>
+                    <div class = "square" onclick = "placeMark(2)"></div>
+                    
+                </div>
+                
+                <div class = "rows">
+                    
+                    <!-- Individual Squares -->
+                    <div class = "square" onclick = "placeMark(3)"></div>
+                    <div class = "square" onclick = "placeMark(4)"></div>
+                    <div class = "square" onclick = "placeMark(5)"></div>
+                    
+                </div>
+                
+                <div class = "rows">
+                    
+                    <!-- Individual Squares -->
+                    <div class = "square" onclick = "placeMark(6)"></div>
+                    <div class = "square" onclick = "placeMark(7)"></div>
+                    <div class = "square" onclick = "placeMark(8)"></div>
+                    
+                </div>
+                
+            </div>
+            
+            
+        </div>
+    </body>
+    
+    <!-- Link JS -->
+    <script src="code.js"></script>
+
+    </html>
