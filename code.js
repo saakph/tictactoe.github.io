@@ -21,6 +21,7 @@ let xScore = 0;
 let oScore = 0;
 let currentTurn = "";
 let scoreIsShown = true;
+let win = false;
 
 currentSelectDisplay.style.display = "none";
 scoreDisplay.style.display = "none";
@@ -87,10 +88,13 @@ function placeMark(squareNumber){
 function checkWin(){
 
     // Check
-    let rowWin = checkRow();
-    let columnWin = checkColumn();
-    let diagonalWin = checkDiagonal();
-    let fullBoard = checkFull();
+    let rowWin, columnWin, diagonalWin, fullBoard;
+    if(!win){
+        rowWin = checkRow();
+        columnWin = checkColumn();
+        diagonalWin = checkDiagonal();
+        fullBoard = checkFull();
+    }
 
     // Display Winner
     if(rowWin || columnWin || diagonalWin){
@@ -99,6 +103,7 @@ function checkWin(){
         scoreDisplay.style.display = "block";
         xScoreDisplay.textContent = "X Score: " + xScore;
         oScoreDisplay.textContent = "O Score: " + oScore;
+        win = true;
         
     } else if(fullBoard == true){
 
@@ -249,12 +254,16 @@ function checkRow(){
         
         if(squares[initialSquare].textContent == "X" && squares[initialSquare + 1].textContent == "X" && squares[initialSquare + 2].textContent == "X"){
             winner = "X";
-            xScore = xScore + 1;
+            if(!win){
+                xScore = xScore + 1;
+            }
             return true;
             
         } else if(squares[initialSquare].textContent == "O" && squares[initialSquare + 1].textContent == "O" && squares[initialSquare + 2].textContent == "O"){
             winner = "O";
-            oScore = oScore + 1;
+            if(!win){
+                oScore = oScore + 1;
+            }
             return true;
             
         }
@@ -276,13 +285,17 @@ function checkColumn(){
         
         if(squares[initialSquare].textContent == "X" && squares[initialSquare + 3].textContent == "X" && squares[initialSquare + 6].textContent == "X"){
             winner = "X";
-            xScore = xScore + 1;
-            return true;
+            if(!win){
+                xScore = xScore + 1;
+
+            }
             
         } else if(squares[initialSquare].textContent == "O" && squares[initialSquare + 3].textContent == "O" && squares[initialSquare + 6].textContent == "O"){
             winner = "O";
-            oScore = oScore + 1;
-            return true;
+            if(!win){
+                oScore = oScore + 1;
+
+            }
             
         }
         
@@ -298,22 +311,34 @@ function checkDiagonal(){
     // Check
     if(squares[0].textContent == "X" && squares[4].textContent == "X" && squares[8].textContent == "X"){
         winner = "X";
-        xScore = xScore + 1;
+        if(!win){
+            xScore = xScore + 1;
+
+        }
         return true;
         
     } else if(squares[0].textContent == "O" && squares[4].textContent == "O" && squares[8].textContent == "O"){
         winner = "O";
-        oScore = oScore + 1;
+        if(!win){
+            oScore = oScore + 1;
+
+        }
         return true;
         
     } else if(squares[6].textContent == "X" && squares[4].textContent == "X" && squares[2].textContent == "X"){
         winner = "X";
-        xScore = xScore + 1;
+        if(!win){
+            xScore = xScore + 1;
+
+        }
         return true;
         
     } else if(squares[6].textContent == "O" && squares[4].textContent == "O" && squares[2].textContent == "O"){
         winner = "O";
-        oScore = oScore + 1;
+        if(!win){
+            oScore = oScore + 1;
+
+        }
         return true;
         
     }
@@ -328,6 +353,7 @@ function resetGame(){
     player2Mark = "";
     winner = "";
     currentTurn = "";
+    win = false;
 
     selectContainer.style.display = "block";
     currentSelectDisplay.style.display = "none";
